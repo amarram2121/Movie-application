@@ -20,7 +20,7 @@ const Header = () => {
     <div className="header">
       <Navbar>
         <Container fluid>
-          <Navbar.Brand href="/">Movie-Web-Task-1</Navbar.Brand>
+          <Navbar.Brand href="/">Movie-Web-Application</Navbar.Brand>
           <Button variant="danger" onClick={handleSignOut}>
             Logout
           </Button>
@@ -28,11 +28,6 @@ const Header = () => {
       </Navbar>
     </div>
 
-    // <div>
-    //  <h1>Movie-Web-Task-1</h1>
-    //  <button onClick={handleSignOut}>Logout</button>
-    // </div>
-    //
   );
 };
 

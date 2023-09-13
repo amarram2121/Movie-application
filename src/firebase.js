@@ -7,15 +7,19 @@ import { getDatabase } from "firebase/database";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAMoSXOJJHRC2QQIkxCJx-y838r-RxfDOM",
-  authDomain: "competitun-task.firebaseapp.com",
-  projectId: "competitun-task",
-  storageBucket: "competitun-task.appspot.com",
-  messagingSenderId: "59372103696",
-  appId: "1:59372103696:web:cf0a90a0cb3a34a0cec295",
+  apiKey: "AIzaSyCKVcOnhu0qLTFbKxKFZP2qIXF6qGRoNGY",
+  authDomain: "movie-app-task-1.firebaseapp.com",
+  projectId: "movie-app-task-1",
+  storageBucket: "movie-app-task-1.appspot.com",
+  messagingSenderId: "344101360186",
+  appId: "1:344101360186:web:89c03d8da0da01036f1b03"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth=getAuth(app);
+export const auth = getAuth(app);
 export const db = getDatabase(app);
+
+
+
+

@@ -28,19 +28,6 @@ const Navigation=()=> {
       </Navbar>
     </div>
 
-    // <nav>
-    //   <ul>
-    //     <li>
-    //       <Link to="/">Home</Link>
-    //     </li>
-    //     <li>
-    //       <Link to="/home/favorites">Favorites</Link>
-    //     </li>
-    //     <li>
-    //       <Link to="/home/watchlist">Watchlist</Link>
-    //     </li>
-    //   </ul>
-    // </nav>
   );
 }
 

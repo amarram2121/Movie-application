@@ -14,7 +14,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 const handlePlayNow = () => {
   toast.success("Movie is Playing", {
     position: "top-right",
-    autoClose: 2000, // 2 seconds
+    autoClose: 2000, 
   });
 };
 
@@ -54,25 +54,7 @@ const MovieDetails = () => {
       </Card>
     </Container>
 
-    // <div>
-    //   <ToastContainer className="notification" />
-    //   <img
-    //     src={`https://image.tmdb.org/t/p/w500${movie.image}`}
-    //     alt={movie.title}
-    //   />
-    //   <h2>{movie.title}</h2>
-    //   <p>{movie.overview}</p>
-    //   <p>Release Date: {movie.release_date}</p>
-    //   <p>Genre: {movie.genre.join(", ")}</p>
-    //   {/* <p>User Rating: {movie.vote_average}</p> */}
-    //   <div style={{ width: "100px" }}>
-    //     <CircularProgressbar
-    //       value={movie.vote_average * 10}
-    //       text={`${movie.vote_average * 10}%`}
-    //     />
-    //   </div>
-    //   <button onClick={() => handlePlayNow()}>Play Now</button>
-    // </div>
+    
   );
 };
 

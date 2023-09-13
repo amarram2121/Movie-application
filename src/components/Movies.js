@@ -13,12 +13,10 @@ const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    // Fetching popular movies
     const fetchPopularMovies = async () => {
       try {
         const response = await axios.get(apiUrl);
         const movieData = response.data.results;
-        // console.log(movieData);
         setMovies(movieData);
       } catch (error) {
         console.error("Error fetching popular movies:", error);

@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -14,18 +15,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #1ae1d3;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(203, 176, 176);
 }
 
 .App-link {
-  color: #61dafb;
+  color: #d6e412;
 }
 
 @keyframes App-logo-spin {
@@ -52,7 +53,7 @@ h2 {
 }
 
 .circular-progress {
-  background-color: #a2b5ba;
+  background-color: #dfe4e6;
   border-radius: 50%;
   font-weight: 800;
   margin-top: -60px;
@@ -62,14 +63,14 @@ h2 {
   position: sticky;
   top: 0;
   z-index: 10;
-  background-color: #c6cad0;
+  background-color: #13d6e1;
 }
 .footer {
   position: fixed;
   width: 100%;
   bottom: 0;
   z-index: 10;
-  background-color: #c6cad0;
+  background-color: #c6d6d7;
   display: flex;
   justify-content: center;
 }
@@ -79,13 +80,17 @@ h2 {
   margin-right: 10px;
   font-size: 1.em;
   font-weight: 800;
-  color: #383737;
+  color: #702a2a;
 }
 
 .link:hover{
-  color: #42730a;
+  color: #df8509;
 }
 
 .outlet{
   margin-bottom: 55px;
+}
+
+.cards{
+  margin-top: 100px;
 }

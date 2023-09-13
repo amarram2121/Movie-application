@@ -35,7 +35,6 @@ const MovieCard = ({ movie }) => {
     { id: 10752, name: "War" },
     { id: 37, name: "Western" },
   ];
-  // console.log(movie.genre_ids);
 
   const findGenre = (arr) => {
     const genreNames = genres
@@ -48,10 +47,6 @@ const MovieCard = ({ movie }) => {
   useEffect(() => {
     findGenre(movie.genre_ids);
   }, []);
-
-  // console.log(genre)
-
-  // console.log(movie);
   const data = {
     image: movie.poster_path,
     name: movie.title,
@@ -60,12 +55,11 @@ const MovieCard = ({ movie }) => {
     genre: genre,
     vote_average: movie.vote_average,
   };
-  // console.log(data);
 
   const addToFavorites = async () => {
     if (user) {
       const res = fetch(
-        `https://competitun-task-default-rtdb.firebaseio.com/users/${user.uid}/favorites.json`,
+        `https://movie-app-task-1-default-rtdb.firebaseio.com/users/${user.uid}/favorites.json`,
         {
           method: "POST",
           headers: {
@@ -87,13 +81,13 @@ const MovieCard = ({ movie }) => {
   const addToWatchlist = () => {
     if (user) {
       const res = fetch(
-        `https://competitun-task-default-rtdb.firebaseio.com/users/${user.uid}/watchlist.json`,
+        `https://movie-app-task-1-default-rtdb.firebaseio.com/users/${user.uid}/watchlist.json`,
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ movie}),
+          body: JSON.stringify({ movie }),
         }
       );
       if (res) {
@@ -107,7 +101,7 @@ const MovieCard = ({ movie }) => {
   };
 
   return (
-    <Card className="m-2" style={{ width: "15rem" }}>
+    <Card className="m-2 cards" style={{ width: "15rem" }}>
       <Link to={`/home/movie/${movie.id}`} state={{ data: data }}>
         <Card.Img
           style={{ height: "15rem" }}
@@ -120,28 +114,17 @@ const MovieCard = ({ movie }) => {
         <Card.Title>{movie.title}</Card.Title>
         <Card.Text>{genre.join(", ")}</Card.Text>
         <ButtonGroup aria-label="Basic example" >
-          <Button variant="secondary" onClick={() => addToFavorites()}>
+          <Button variant="info" onClick={() => addToFavorites()}>
             Add to Favorites
           </Button>
-          <Button variant="info" onClick={() => addToWatchlist()}>
+          <Button variant="secondary" onClick={() => addToWatchlist()}>
             Add to Watchlist
           </Button>
         </ButtonGroup>
       </Card.Body>
     </Card>
 
-    //  <>
-    //   <Link to={`/home/movie/${movie.id}`} state={{ data: data }}>
-    //     <img
-    //       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
-    //       alt={movie.title}
-    //     />
-    //   </Link>
-    //   <h2>{movie.title}</h2>
-    //   <p>{genre.join(", ")}</p>
-    //   <button onClick={() => addToFavorites(movie.id)}>Add to Favorites</button>
-    //   <button onClick={() => addToWatchlist(movie.id)}>Add to Watchlist</button>
-    // </>
+    
   );
 };
 
