@@ -1,24 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import MovieDetails from "./components/MovieDetails";
+import { AuthContextProvider } from "./context/AuthContext";
+import Protected from "./components/Protected";
+import Watchlist from "./components/Watchlist";
+import Favorites from "./components/Favorites";
+import RootLayout from "./layout/RootLayout";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <AuthContextProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/home" element={<RootLayout />}>
+              <Route
+                index
+                element={
+                  <Protected>
+                    <Home />
+                  </Protected>
+                }
+              ></Route>
+              <Route
+                path="favorites"
+                element={
+                  <Protected>
+                    <Favorites />
+                  </Protected>
+                }
+              />
+              <Route
+                path="watchlist"
+                element={
+                  <Protected>
+                    <Watchlist />
+                  </Protected>
+                }
+              />
+              <Route
+                path="movie/:id"
+                element={
+                  <Protected>
+                    <MovieDetails />
+                  </Protected>
+                }
+              />
+            </Route>
+          </Routes>
+        </Router>
+      </AuthContextProvider>
+    </>
   );
 }
 
